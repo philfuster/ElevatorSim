@@ -1,5 +1,4 @@
 import random
-import simulation
 
 class Elevator:
 
@@ -7,8 +6,7 @@ class Elevator:
     status = { "ready":True, "traveling":False}
     currentFloor = 1
     destinations = []
-
-    #floorAccess
+    floorAccess
 
     def __init__(self):
         self.id = None
@@ -25,7 +23,7 @@ class Elevator:
 
 class Retail_Elevator(Elevator):
     status = "ready"
-    #floorAccess
+    floorAccess = range( 1, 6 )
     currentFloor = 1
     destinationFloor = 1
 
@@ -43,7 +41,7 @@ class Residential_Elevator(Elevator):
     status = "ready"
     currentFloor = 1
     destinationFloor = 1
-    #floorAccess
+    floorAccess
 
     def __init__(self):
         self.id
@@ -59,7 +57,7 @@ class Office_Elevator(Elevator):
     status ="ready"
     currentFloor = 1
     destinationFloor = 1
-    #floorAccess
+    floorAccess
 
 
 class Mechanical_Elevator(Elevator):
@@ -68,7 +66,7 @@ class Mechanical_Elevator(Elevator):
     status="ready"
     currentFloor = 1
     destinationFloor = 1
-    #floorAccess
+    floorAccess = range( 1, 81 )
 
     def __init__(self):
         self.id
@@ -76,8 +74,15 @@ class Mechanical_Elevator(Elevator):
         self.currentFloor = 1
         self.destinationFloor = 1
 
+class Low_Residential_Elevator(Residential_Elevator)
 
+    floorAccess = range( 23, 40 )
 
+class High_Residential_Elevator(Residential_Elevator)
+
+    floorAccess = range( 63,80 )
+
+    def __init__(self):
 
 
 e1 = Retail_Elevator()
