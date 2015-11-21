@@ -35,13 +35,27 @@ class Retail_Elevator(Elevator):
 
 
 
-class Residential_Elevator(Elevator):
+class Residential_Elevator_Lower(Elevator):
 
     id
     status = "ready"
     currentFloor = 1
     destinationFloor = 1
-    floorAccess
+    floorAccess = range( 23, 40 )
+
+    def __init__(self):
+        self.id
+        self.status = "ready"
+        self.currentFloor = 1
+        self.destinationFloor = 1
+
+class Residential_Elevator_Luxury(Elevator):
+
+    id
+    status = "ready"
+    currentFloor = 1
+    destinationFloor = 1
+    floorAccess = range( 63,80 )
 
     def __init__(self):
         self.id
@@ -50,8 +64,15 @@ class Residential_Elevator(Elevator):
         self.destinationFloor = 1
 
 
+class Office_Elevator_Lower(Elevator):
 
-class Office_Elevator(Elevator):
+    id
+    status ="ready"
+    currentFloor = 1
+    destinationFloor = 1
+    floorAccess
+    
+class Office_Elevator_Luxury(Elevator):
 
     id
     status ="ready"
@@ -74,17 +95,20 @@ class Mechanical_Elevator(Elevator):
         self.currentFloor = 1
         self.destinationFloor = 1
 
-class Low_Residential_Elevator(Residential_Elevator)
+class Observatory_Elevator(Elevator):
 
-    floorAccess = range( 23, 40 )
-
-class High_Residential_Elevator(Residential_Elevator)
-
-    floorAccess = range( 63,80 )
+    id
+    status="ready"
+    currentFloor = 1
+    destinationFloor = 1
+    floorAccess = range( 1, 81 )
 
     def __init__(self):
-
-
+        self.id
+        self.status = "ready"
+        self.currentFloor = 1
+        self.destinationFloor = 1
+        
 e1 = Retail_Elevator()
 
 print "Status of retail elevator is", e1.status
