@@ -55,7 +55,7 @@ class Residential_Elevator_Luxury(Elevator):
     status = "ready"
     currentFloor = 1
     destinationFloor = 1
-    floorAccess = range( 63,80 )
+    floorAccess = range( 63, 80 )
 
     def __init__(self):
         self.id
@@ -70,7 +70,7 @@ class Office_Elevator_Lower(Elevator):
     status ="ready"
     currentFloor = 1
     destinationFloor = 1
-    floorAccess
+    floorAccess = range( 7, 20 )
     
 class Office_Elevator_Luxury(Elevator):
 
@@ -78,7 +78,7 @@ class Office_Elevator_Luxury(Elevator):
     status ="ready"
     currentFloor = 1
     destinationFloor = 1
-    floorAccess
+    floorAccess = range( 43, 60 )
 
 
 class Mechanical_Elevator(Elevator):
@@ -116,6 +116,3 @@ print "Status of retail elevator is", e1.status
 e1.setFloor(2)
 
 print e1.getFloor()
-
-
-
