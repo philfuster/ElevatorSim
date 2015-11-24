@@ -4,16 +4,6 @@ from Elevator import Elevator, Retail_Elevator,  Residential_Elevator_Lower, Res
 
 class Simulation:
 
-	#elevators = []
-	#elevators.append( Retail_Elevator )
-	#elevators.append( Residential_Elevator_Lower )
-	#elevators.append( Residential_Elevator_Luxury )
-	#elevators.append( Office_Elevator_Lower )
-	#elevators.append( Office_Elevator_Luxury )
-	#elevators.append( Mechanical_Elevator )
-	#elevators.append( Observatory_Elevator )
-	#elevators.append( Key_Card_Elevator )
-
 	AllWaitingList = [ [], [], [], [], [], [], [], [] ]
 	AllWaitingPickUp = [ [], [], [], [], [], [], [], [] ]
 	AllElevators = [ [], [], [], [], [], [], [], [] ]
@@ -22,7 +12,7 @@ class Simulation:
 	cntTrips = [ 0, 0, 0, 0, 0, 0, 0, 0]
 	maxTime = [ 0, 0, 0, 0, 0, 0, 0, 0]
 
-	print Key_Card_Elevator.currentFloor
+	print "Simulation begins here"
 
 	for it in range( 0, 11 ):
 		AllElevators[ 0 ].append( Key_Card_Elevator )
@@ -49,12 +39,14 @@ class Simulation:
 		AllWaitingPickUp[ 5 ].append( [] )
 
 	for it in range( 0, 2 ):
-		AllElevators[ 5 ].append( Observatory_Elevator )
+		AllElevators[ 6 ].append( Observatory_Elevator )
 		AllWaitingPickUp[ 6 ].append( [] )
 
 	for it in range( 0, 4 ):
 		AllElevators[ 7 ].append( Mechanical_Elevator )
 		AllWaitingPickUp[ 7 ].append( [] )
+
+	print len( AllWaitingPickUp[ 7 ] )
 
 	flag = False
 	# Check from 7:00 to 10:00
@@ -89,8 +81,9 @@ class Simulation:
 		#WaitingList.append( waitingGroup )
 
 		# Check all of the elevators
-		for typeElevator in range( 0, 7 ):
+		for typeElevator in range( 0, 8 ):
 
+			print "Checking Elevator "  + `typeElevator`
 			WaitingList = AllWaitingList[ typeElevator ]
 			WaitingPickup = AllWaitingPickUp[ typeElevator ]
 			Elevators = AllElevators[ typeElevator ]
@@ -234,7 +227,9 @@ class Simulation:
 
 					doorsOpen = False
 
-
+	print cntTime
+	print cntTrips
+	print maxTime
 
 
 
